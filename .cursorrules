@@ -1,0 +1,47 @@
+# PROJEECT CONTEXT
+You are working on a "Forever Base" Next.js starter repo.
+This is not a generic project. It adheres to a strict "Product Engineering" philosophy.
+
+# CORE PHILOSOPHY
+1. **Design Systems**: We use tokens (variables), not magic numbers.
+2. **Motion-Led**: Motion explains state changes. It is not decoration.
+3. **Mobile-First**: Design for touch (44px targets) and small screens first.
+4. **Dark Mode**: The default aesthetic is dark, clean, and high-contrast.
+
+# TECH STACK
+- Framework: Next.js 15 (App Router)
+- Styling: Tailwind CSS (with CSS variables)
+- Animation: Framer Motion
+- Structure: `src/design-system` is the "Sacred Layer".
+
+# THE RULES
+
+## 1. Design System Usage
+- NEVER use arbitrary pixel values for spacing or colors.
+- ALWAYS use `spacing` tokens (e.g., `gap-4` mapped to `1rem`).
+- ALWAYS use `colors` tokens (e.g., `bg-bg-primary`, `text-text-muted`).
+- If you need a value that doesn't exist, UPDATE THE SYSTEM, don't inline it.
+
+## 2. Motion Rules
+- NEVER use `ease-in-out` curves. Use springs.
+- USE `softSpring` (stiffness: 300, damping: 32) for UI transitions.
+- USE `fastSpring` (stiffness: 400, damping: 30) for micro-interactions.
+- USE `layout` prop for expanding items.
+- ALWAYS provide visual feedback on press (`scale: 0.98`).
+
+## 3. Accessibility Standards
+- Minimum tap target: 44px (height & width).
+- Visible focus rings `focus-visible:ring-2` are MANDATORY.
+- Muted text must be readable (Use `var(--text-muted)`, never `opacity-50`).
+- Respect `prefers-reduced-motion`.
+
+## 4. Component Implementation
+- Use the detailed "Signature Interaction" pattern for major moments:
+  - Press -> Dim Background -> Expand -> Staggered Reveal.
+- All functional components go in `src/components`.
+- All base UI components go in `src/design-system/components`.
+
+# DIRECTORY MAP
+- `src/design-system/tokens`: CSS definitions.
+- `src/design-system/motion`: Animation presets.
+- `docs/SOP.md`: The 12-Phase Standard Operating Procedure.

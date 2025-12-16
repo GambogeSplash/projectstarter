@@ -1,9 +1,64 @@
+/**
+ * CHIDI Design System - Color Tokens
+ * Base colors extracted from Figma and optimized for dark theme
+ */
+
 :root {
-  --bg-primary: #0b0d12;
-  --bg-surface: #121521;
-
-  --text-primary: #ffffff;
-  --text-muted: #9ca3af;
-
-  --accent-brand: #6cf2c2;
+  /* ===== BACKGROUND COLORS ===== */
+  --color-bg-app: #131316;
+  --color-bg-surface: #1b1b1f;
+  --color-bg-surface-raised: #1f1f24;
+  --color-bg-surface-hover: #27272d;
+  
+  /* ===== ACCENT COLORS ===== */
+  --color-accent-primary: #6060f8;
+  --color-accent-primary-hover: #5050e8;
+  --color-accent-secondary: #33ffcc;
+  --color-accent-destructive: #cd0404;
+  
+  /* ===== TEXT COLORS ===== */
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #5e5e66;
+  --color-text-tertiary: #83838b;
+  --color-text-muted: #696972;
+  --color-text-on-accent: #ffffff;
+  
+  /* ===== BORDER COLORS ===== */
+  --color-border-subtle: #191919;
+  --color-border-default: #27272d;
+  --color-border-strong: #2d2d34;
+  --color-border-accent: #6060f8;
+  
+  /* ===== STATUS COLORS ===== */
+  --color-status-success: #33ffcc;
+  --color-status-warning: #f8c060;
+  --color-status-error: #cd0404;
+  --color-status-info: #6060f8;
+  
+  /* ===== SEMANTIC COLORS ===== */
+  --color-whatsapp: #25d366;
+  --color-instagram: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+  --color-shopify: #96bf48;
+  
+  /* ===== FIGMA-SPECIFIC UI COLORS ===== */
+  /* Button backgrounds (layered) */
+  --color-button-overlay: rgba(0, 0, 0, 0.1);
+  --color-button-bg: #2d2d34;
+  --color-button-border: #2f2f36;
+  
+  /* Input backgrounds (layered) */
+  --color-input-overlay: rgba(0, 0, 0, 0.2);
+  --color-input-bg: #27272d;
+  
+  /* Divider */
+  --color-divider: #303033;
+  --color-divider-text: #424246;
+  
+  /* Brand glow (lighter variant of primary) */
+  --color-brand-glow: #6e6eff;
+  
+  /* iOS-style UI chrome */
+  --color-ios-chrome-bg: rgba(21, 21, 21, 0.8);
+  --color-ios-chrome-border: rgba(255, 255, 255, 0.12);
+  --color-ios-status-bar-bg: rgba(0, 0, 0, 0.1);
 }

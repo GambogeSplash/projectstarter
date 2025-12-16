@@ -1,0 +1,173 @@
+/**
+ * CHIDI Design System - Global Styles
+ * Import design tokens and base styles
+ */
+
+/* ===== IMPORT DESIGN TOKENS ===== */
+@import "../design-system/tokens/colors.css";
+@import "../design-system/tokens/typography.css";
+@import "../design-system/tokens/spacing.css";
+@import "../design-system/tokens/radius.css";
+@import "../design-system/tokens/shadows.css";
+
+/* ===== CUSTOM VARIANTS ===== */
+@custom-variant dark (&:is(.dark *));
+
+/* ===== SHADCN/UI COMPATIBILITY LAYER ===== */
+:root {
+  /* Map CHIDI tokens to shadcn/ui naming for compatibility */
+  --background: var(--color-bg-app);
+  --foreground: var(--color-text-primary);
+  --card: var(--color-bg-surface);
+  --card-foreground: var(--color-text-primary);
+  --popover: var(--color-bg-surface-raised);
+  --popover-foreground: var(--color-text-primary);
+  --primary: var(--color-accent-primary);
+  --primary-foreground: var(--color-text-on-accent);
+  --secondary: var(--color-bg-surface-raised);
+  --secondary-foreground: var(--color-text-primary);
+  --muted: var(--color-bg-surface-hover);
+  --muted-foreground: var(--color-text-secondary);
+  --accent: var(--color-accent-primary);
+  --accent-foreground: var(--color-text-on-accent);
+  --destructive: var(--color-accent-destructive);
+  --destructive-foreground: var(--color-text-on-accent);
+  --border: var(--color-border-default);
+  --input: var(--color-bg-surface-raised);
+  --ring: var(--color-accent-primary);
+  
+  /* Base font size */
+  --font-size: 16px;
+  
+  /* Base radius (for shadcn compatibility) */
+  --radius: var(--radius-lg);
+}
+
+/* ===== TAILWIND THEME INTEGRATION ===== */
+@theme inline {
+  /* Colors */
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  
+  /* Radius scale */
+  --radius-sm: var(--radius-sm);
+  --radius-md: var(--radius-md);
+  --radius-lg: var(--radius-lg);
+  --radius-xl: var(--radius-xl);
+}
+
+/* ===== BASE STYLES ===== */
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/**
+ * Base typography with CHIDI design system
+ * Typography classes from typography.css are available globally
+ */
+@layer base {
+  :where(:not(:has([class*=' text-']), :not(:has([class^='text-'])))) {
+    h1 {
+      font-size: var(--font-size-4xl);
+      font-weight: var(--font-weight-bold);
+      line-height: var(--leading-tight);
+      letter-spacing: var(--tracking-tight);
+    }
+
+    h2 {
+      font-size: var(--font-size-3xl);
+      font-weight: var(--font-weight-semibold);
+      line-height: var(--leading-snug);
+      letter-spacing: var(--tracking-tight);
+    }
+
+    h3 {
+      font-size: var(--font-size-2xl);
+      font-weight: var(--font-weight-semibold);
+      line-height: var(--leading-snug);
+    }
+
+    h4 {
+      font-size: var(--font-size-lg);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--leading-normal);
+    }
+
+    h5 {
+      font-size: var(--font-size-md);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--leading-normal);
+    }
+
+    label {
+      font-size: var(--font-size-base);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--leading-normal);
+    }
+
+    button {
+      font-size: var(--font-size-md);
+      font-weight: var(--font-weight-medium);
+      line-height: var(--leading-normal);
+    }
+
+    input, textarea {
+      font-size: var(--font-size-md);
+      font-weight: var(--font-weight-normal);
+      line-height: var(--leading-normal);
+    }
+
+    p {
+      font-size: var(--font-size-md);
+      font-weight: var(--font-weight-normal);
+      line-height: var(--leading-relaxed);
+    }
+  }
+}
+
+/* ===== UTILITY CLASSES ===== */
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+  
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/* ===== ROOT FONT SIZE ===== */
+html {
+  font-size: var(--font-size);
+}

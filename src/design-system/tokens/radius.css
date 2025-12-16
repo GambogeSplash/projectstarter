@@ -1,0 +1,32 @@
+/**
+ * CHIDI Design System - Border Radius Tokens
+ * Consistent border radius values for UI elements
+ */
+
+:root {
+  /* ===== BORDER RADIUS SCALE ===== */
+  --radius-none: 0;
+  --radius-xs: 0.25rem;      /* 4px - Tight badges */
+  --radius-sm: 0.5rem;       /* 8px - Small elements */
+  --radius-md: 0.5625rem;    /* 9px - Figma buttons/inputs */
+  --radius-lg: 0.75rem;      /* 12px - Cards */
+  --radius-xl: 1rem;         /* 16px - Large cards */
+  --radius-2xl: 1.5rem;      /* 24px - Chat bubbles */
+  --radius-3xl: 2rem;        /* 32px - Major containers */
+  --radius-full: 9999px;     /* Full circle */
+  
+  /* ===== SEMANTIC RADIUS ===== */
+  --radius-button: var(--radius-md);        /* 9px - Figma exact */
+  --radius-card: var(--radius-lg);          /* 12px */
+  --radius-input: var(--radius-md);         /* 9px - Figma exact */
+  --radius-badge: var(--radius-xs);         /* 4px */
+  --radius-pill: var(--radius-full);        /* Full pill shape */
+  --radius-modal: var(--radius-xl);         /* 16px */
+  --radius-avatar: var(--radius-full);      /* Full circle */
+  --radius-image: var(--radius-lg);         /* 12px */
+  --radius-chat-bubble: var(--radius-2xl);  /* 24px */
+  
+  /* ===== FIGMA-SPECIFIC RADIUS ===== */
+  --radius-brand-logo: 0.8185rem;          /* 13.096px - Brand icon */
+  --radius-tab-button: var(--radius-2xl);  /* 24px - iOS tab buttons */
+}
